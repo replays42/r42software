@@ -1,64 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>R42 Project | Free Software by Replays42</title>
-  <meta name="description" content="Free software tools & utilities for Windows and browsers by Replays42">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R42 Project | Premium Free Software</title>
+  <meta name="description" content="High-quality free software tools for Windows by Replays42">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --secondary: #8b5cf6;
-      --accent: #10b981;
-      --accent-light: #34d399;
-      --card-bg: #ffffff;
-      --text-dark: #1e293b;
-      --text-medium: #475569;
-      --text-light: #64748b;
-      --radius: 16px;
-      --radius-sm: 8px;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --background: #f8fafc;
-      --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      --primary: #8B5CF6;
+      --primary-dark: #7C3AED;
+      --primary-light: #A78BFA;
+      --accent: #10B981;
+      --dark: #0F172A;
+      --darker: #020617;
+      --light: #F8FAFC;
+      --gray: #94A3B8;
+      --card-bg: #1E293B;
+      --radius: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --glass: rgba(30, 41, 59, 0.5);
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--background);
-      color: var(--text-dark);
+      font-family: 'Manrope', sans-serif;
+      background-color: var(--darker);
+      color: var(--light);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      margin-top: 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
     /* Header */
     header {
-      background: var(--gradient);
-      color: white;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+      padding: 120px 0 180px;
       text-align: center;
-      padding: 120px 20px;
       position: relative;
       overflow: hidden;
     }
@@ -66,38 +61,50 @@
     header::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /><path fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" d="M0,50 L100,50 M50,0 L50,100" /></svg>');
-      background-size: 40px 40px;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      z-index: 0;
     }
 
-    header .container {
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .header-content {
       position: relative;
       z-index: 1;
       max-width: 800px;
       margin: 0 auto;
     }
 
-    header h1 {
+    .logo {
       font-size: 3.5rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
     }
 
-    header p {
-      font-size: 1.3rem;
-      opacity: 0.9;
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--gray);
+      margin-bottom: 40px;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cta-buttons {
       display: flex;
-      gap: 15px;
+      gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -106,57 +113,73 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 28px;
+      padding: 16px 32px;
       font-size: 1rem;
-      font-weight: 500;
-      border-radius: var(--radius-sm);
-      transition: all 0.3s ease;
+      font-weight: 600;
+      border-radius: var(--radius);
+      transition: var(--transition);
       cursor: pointer;
+      border: none;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      z-index: -1;
+      transition: var(--transition);
     }
 
     .btn-primary {
-      background: white;
-      color: var(--primary-dark);
-      box-shadow: var(--shadow);
+      color: white;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-primary:hover::before {
+      opacity: 0.9;
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.15);
-      color: white;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: var(--glass);
+      color: var(--light);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.25);
-      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-3px);
     }
 
-    .btn i {
-      margin-right: 8px;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+    /* Main Content */
+    main {
+      position: relative;
+      margin-top: -100px;
+      z-index: 2;
     }
 
     .section {
-      padding: 80px 0;
+      margin-bottom: 120px;
     }
 
     .section-title {
-      text-align: center;
       font-size: 2.5rem;
-      color: var(--text-dark);
-      margin-bottom: 60px;
+      font-weight: 700;
+      margin-bottom: 48px;
+      text-align: center;
       position: relative;
     }
 
@@ -165,229 +188,299 @@
       display: block;
       width: 80px;
       height: 4px;
-      background: var(--gradient);
-      margin: 15px auto 0;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      margin: 20px auto 0;
       border-radius: 2px;
     }
 
-    /* Downloads Grid */
-    .downloads-grid {
+    /* App Grid */
+    .app-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 30px;
-      margin-bottom: 50px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 32px;
     }
 
-    .download-card {
+    /* App Card */
+    .app-card {
       background: var(--card-bg);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.05);
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
     }
 
-    .download-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
     }
 
-    .download-card .card-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--gradient);
-      border-radius: 12px;
+    .app-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .app-card-header {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      font-size: 1.5rem;
       color: white;
-      font-size: 1.5rem;
+      flex-shrink: 0;
     }
 
-    .download-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: var(--text-dark);
-      text-align: center;
+    .app-title {
+      font-size: 1.3rem;
+      font-weight: 600;
     }
 
-    .download-card p {
-      font-size: 1rem;
-      margin-bottom: 25px;
-      color: var(--text-medium);
+    .app-card-body {
+      padding: 0 24px 24px;
       flex-grow: 1;
     }
 
+    .app-description {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .app-card-footer {
+      padding: 0 24px 24px;
+    }
+
     .download-btn {
-      background: var(--gradient);
-      color: white;
-      padding: 12px 24px;
-      font-size: 1rem;
-      font-weight: 500;
-      border-radius: var(--radius-sm);
-      text-align: center;
-      transition: all 0.3s ease;
-      display: block;
-      width: fit-content;
-      margin: 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px;
+      background: rgba(255,255,255,0.05);
+      color: var(--light);
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: var(--transition);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(5px);
     }
 
     .download-btn:hover {
+      background: rgba(255,255,255,0.1);
       transform: translateY(-2px);
-      box-shadow: var(--shadow);
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
     }
 
     .download-btn i {
       margin-right: 8px;
+      color: var(--primary-light);
     }
 
-    /* Features Section */
+    /* Features */
     .features {
-      background: white;
-      padding: 80px 0;
+      padding: 120px 0;
+      background: linear-gradient(to bottom, var(--dark) 0%, var(--darker) 100%);
     }
 
-    .features-grid {
+    .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 48px;
     }
 
     .feature-card {
       text-align: center;
-      padding: 30px;
+      padding: 40px 24px;
+      background: var(--glass);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border-color: rgba(139, 92, 246, 0.3);
     }
 
     .feature-icon {
-      width: 80px;
-      height: 80px;
-      background: var(--gradient);
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      margin: 0 auto 24px;
       color: white;
-      font-size: 2rem;
+      font-size: 1.75rem;
+      transition: var(--transition);
     }
 
-    .feature-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: var(--text-dark);
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(10deg);
     }
 
-    .feature-card p {
-      color: var(--text-medium);
+    .feature-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 16px;
     }
 
-    /* Testimonials */
-    .testimonials {
-      background: var(--background);
-      padding: 80px 0;
+    .feature-description {
+      color: var(--gray);
+      font-size: 1rem;
     }
 
-    .testimonial-card {
-      background: white;
-      padding: 30px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      max-width: 800px;
-      margin: 0 auto;
+    /* Stats */
+    .stats {
+      padding: 100px 0;
       position: relative;
+      overflow: hidden;
     }
 
-    .testimonial-card::before {
-      content: '"';
+    .stats::before {
+      content: '';
       position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 4rem;
-      color: rgba(99, 102, 241, 0.1);
-      font-family: serif;
-      line-height: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='rgba(139, 92, 246, 0.1)' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
     }
 
-    .testimonial-content {
-      font-size: 1.1rem;
-      color: var(--text-dark);
-      font-style: italic;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .author-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--gradient);
-      margin-right: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-    }
-
-    .author-info h4 {
-      margin-bottom: 5px;
-      font-size: 1.1rem;
-    }
-
-    .author-info p {
-      color: var(--text-light);
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    /* Newsletter */
-    .newsletter {
-      background: var(--gradient);
-      color: white;
-      padding: 60px 20px;
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
       text-align: center;
+      position: relative;
     }
 
-    .newsletter h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    .stat {
+      background: var(--glass);
+      padding: 40px 20px;
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: var(--transition);
     }
 
-    .newsletter p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      opacity: 0.9;
+    .stat:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: var(--gray);
     }
 
     /* Footer */
     footer {
-      background: var(--text-dark);
-      color: white;
-      padding: 60px 0 30px;
+      background: linear-gradient(to bottom, var(--darker) 0%, #000 100%);
+      padding: 100px 0 50px;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
     }
 
     .footer-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .footer-about {
+      color: var(--gray);
+      margin-bottom: 24px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--glass);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
     }
 
     .footer-column h3 {
       font-size: 1.2rem;
-      margin-bottom: 20px;
+      font-weight: 600;
+      margin-bottom: 24px;
       position: relative;
-      padding-bottom: 10px;
+      padding-bottom: 12px;
     }
 
     .footer-column h3::after {
@@ -396,57 +489,37 @@
       left: 0;
       bottom: 0;
       width: 40px;
-      height: 2px;
-      background: var(--accent-light);
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
     }
 
     .footer-links {
       list-style: none;
-      padding: 0;
-      margin: 0;
     }
 
     .footer-links li {
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
 
     .footer-links a {
-      color: rgba(255,255,255,0.7);
-      transition: color 0.3s ease;
+      color: var(--gray);
+      transition: var(--transition);
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .footer-links a:hover {
-      color: white;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-      background: var(--accent-light);
-      transform: translateY(-3px);
+      color: var(--light);
+      transform: translateX(5px);
     }
 
     .footer-bottom {
       text-align: center;
-      padding-top: 30px;
+      padding-top: 50px;
       border-top: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
+      color: var(--gray);
+      font-size: 0.95rem;
     }
 
     /* Modal */
@@ -457,74 +530,159 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.7);
+      background-color: rgba(0,0,0,0.8);
       z-index: 1000;
       overflow: auto;
+      backdrop-filter: blur(8px);
     }
 
     .modal-content {
-      background-color: white;
+      background: linear-gradient(to bottom, var(--dark) 0%, var(--darker) 100%);
       margin: 10% auto;
-      padding: 30px;
-      border-radius: var(--radius);
+      padding: 40px;
+      border-radius: var(--radius-lg);
       max-width: 600px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
       position: relative;
+      border: 1px solid rgba(255,255,255,0.1);
+      animation: modalFadeIn 0.3s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .close-modal {
       position: absolute;
-      top: 15px;
+      top: 20px;
       right: 20px;
       font-size: 1.5rem;
       cursor: pointer;
-      color: var(--text-light);
+      color: var(--gray);
+      transition: var(--transition);
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
     }
 
     .close-modal:hover {
-      color: var(--text-dark);
+      color: var(--light);
+      background: rgba(255,255,255,0.1);
+      transform: rotate(90deg);
     }
 
-    /* Animations */
-    .animate-delay-1 {
-      animation-delay: 0.2s;
+    .modal-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary-light);
     }
 
-    .animate-delay-2 {
-      animation-delay: 0.4s;
+    .modal-text {
+      color: var(--gray);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .modal-list {
+      margin: 20px 0;
+      padding-left: 24px;
+    }
+
+    .modal-list li {
+      margin-bottom: 12px;
+      color: var(--gray);
+      position: relative;
+    }
+
+    .modal-list li::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
     }
 
     /* Responsive */
+    @media (max-width: 1024px) {
+      header {
+        padding: 100px 0 160px;
+      }
+      
+      .logo {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 2.2rem;
+      }
+    }
+
     @media (max-width: 768px) {
-      header h1 {
+      header {
+        padding: 80px 0 140px;
+      }
+      
+      .logo {
         font-size: 2.5rem;
       }
       
-      header p {
+      .tagline {
         font-size: 1.1rem;
+      }
+      
+      .section {
+        margin-bottom: 80px;
       }
       
       .section-title {
         font-size: 2rem;
       }
+      
+      .app-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
     }
 
     @media (max-width: 480px) {
       header {
-        padding: 80px 20px;
+        padding: 60px 0 120px;
       }
       
-      header h1 {
+      .logo {
         font-size: 2rem;
       }
       
       .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        width: 100%;
       }
       
-      .downloads-grid {
+      .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .app-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .modal-content {
+        padding: 30px 20px;
+        margin: 20% auto;
       }
     }
   </style>
@@ -533,278 +691,387 @@
 <body>
 
   <!-- Header -->
-  <header class="animate__animated animate__fadeIn">
+  <header>
     <div class="container">
-      <h1>R42 Project</h1>
-      <p>Free, high-quality software tools & utilities crafted by @replays42</p>
-      <div class="cta-buttons">
-        <a href="#downloads" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s">
-          <i class="fas fa-download"></i> Get Started
-        </a>
-        <a href="https://youtube.com/@replays42" target="_blank" class="btn btn-secondary animate__animated animate__fadeInUp animate__delay-2s">
-          <i class="fab fa-youtube"></i> YouTube
-        </a>
+      <div class="header-content">
+        <h1 class="logo">R42 Project</h1>
+        <p class="tagline">Premium free software tools for Windows and browsers</p>
+        <div class="cta-buttons">
+          <a href="#downloads" class="btn btn-primary">
+            <i class="fas fa-download"></i> Get Started
+          </a>
+          <a href="https://youtube.com/@replays42" target="_blank" class="btn btn-secondary">
+            <i class="fab fa-youtube"></i> YouTube
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Features Section -->
-  <section class="features">
+  <!-- Main Content -->
+  <main>
     <div class="container">
-      <div class="features-grid">
-        <div class="feature-card animate__animated animate__fadeIn">
-          <div class="feature-icon">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3>Performance Boost</h3>
-          <p>Our tools are designed to optimize and enhance your system's performance for a smoother experience.</p>
-        </div>
-        
-        <div class="feature-card animate__animated animate__fadeIn animate__delay-1s">
-          <div class="feature-icon">
-            <i class="fas fa-lock"></i>
-          </div>
-          <h3>Safe & Secure</h3>
-          <p>All our software is thoroughly tested and completely free from malware or unwanted bundled programs.</p>
-        </div>
-        
-        <div class="feature-card animate__animated animate__fadeIn animate__delay-2s">
-          <div class="feature-icon">
-            <i class="fas fa-heart"></i>
-          </div>
-          <h3>Free Forever</h3>
-          <p>We believe in open access. All R42 Project tools will always remain completely free to use.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Container -->
-  <div class="container">
-
-    <!-- Apps Section -->
-    <section id="downloads" class="section">
-      <h2 class="section-title animate__animated animate__fadeIn">Windows Applications</h2>
-      <div class="downloads-grid">
-        <!-- FakeFPS -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-tachometer-alt"></i>
-          </div>
-          <h3>FakeFPS</h3>
-          <p>An app that sets a realistic frame rate overlay to monitor your gaming performance.</p>
-          <a href="https://www.mediafire.com/file/n81yvy19khy969h/setup.exe/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- R42 Tweaks -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-          <h3>R42 Tweaks</h3>
-          <p>A comprehensive collection of scripts and registry files designed to boost your system's performance.</p>
-          <a href="https://www.mediafire.com/file/ojhzrgel92rpwwl/Replays42+Tweaks.rar/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- Network Speed Booster -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-wifi"></i>
-          </div>
-          <h3>Network Speed Booster</h3>
-          <p>Optimizes your network settings for maximum speed and reduced latency in online activities.</p>
-          <a href="https://www.mediafire.com/file/fcv7yxkxghb3x8h/Network+Speed+Booster.r42/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- Suyu FPS Mod -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-gamepad"></i>
-          </div>
-          <h3>Suyu FPS Mod</h3>
-          <p>Unlocks up to 60 frames for the Suyu Switch emulator, enhancing your gaming experience.</p>
-          <a href="#" class="download-btn">
-            <i class="fas fa-download"></i> Coming Soon
-          </a>
-        </div>
-
-        <!-- Retro N64 Launcher -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-chess-board"></i>
-          </div>
-          <h3>Retro N64 Launcher</h3>
-          <p>A sleek launcher that organizes and launches your N64 games using Project64 emulator.</p>
-          <a href="https://www.mediafire.com/file/5ne11ctbx5b6jln/r42+exe.msi/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- Custom File Extractor -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-file-archive"></i>
-          </div>
-          <h3>Custom File Extractor</h3>
-          <p>Registers .r42 files and provides a simple interface to extract archived content.</p>
-          <a href="https://www.mediafire.com/file/mv6ibb06qe1rcqx/public+for+extracting+r42_archives.exe/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- Rise Of The TR Cheat -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-crosshairs"></i>
-          </div>
-          <h3>Rise Of The TR Cheat</h3>
-          <p>A DLL file for injection into the ROTTR process (experimental - use at your own risk).</p>
-          <a href="https://www.mediafire.com/file/1z41nvof31teak0/ROTTR_Hack.dll/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- DLL Injector -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>DLL Injector</h3>
-          <p>Select and inject DLL files into running processes with this straightforward tool.</p>
-          <a href="https://www.mediafire.com/file/tztokccvryzyi7t/Injector_Exe.exe/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- File Organizer -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-folder-open"></i>
-          </div>
-          <h3>File Organizer</h3>
-          <p>Automatically organizes files into folders based on their extensions with customizable rules.</p>
-          <a href="https://www.mediafire.com/file/i6o7rk4aojk1zba/File_Organizer.exe/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- Image Resizer -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-image"></i>
-          </div>
-          <h3>Image Resizer</h3>
-          <p>Quickly rescale images to desired dimensions while maintaining aspect ratio options.</p>
-          <a href="https://www.mediafire.com/file/7bnblwx9vhh197y/image_resizer.exe/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- TXT File Word Counter -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <h3>TXT File Word Counter</h3>
-          <p>Analyzes text files and provides detailed word count statistics with export options.</p>
-          <a href="https://www.mediafire.com/file/a2dkgklu74k5y39/txt_word_counter_app.exe/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-
-        <!-- Basic Calculator -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-calculator"></i>
-          </div>
-          <h3>Basic Calculator</h3>
-          <p>A clean, modern calculator with arithmetic functions and a history of calculations.</p>
-          <a href="https://www.mediafire.com/file/q63zz2tbn2fhbwp/Basic_Calculator.exe/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Download
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Browser Extensions Section -->
-    <section class="section">
-      <h2 class="section-title animate__animated animate__fadeIn">Browser Extensions</h2>
-      <div class="downloads-grid">
-        <!-- Ultimate Ad-Blocker -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Ultimate Ad-Blocker</h3>
-          <p>Blocks ads, trackers, and malicious scripts for faster, cleaner, and safer browsing.</p>
-          <a href="https://www.mediafire.com/file/7wp2jsvrt52m5ae/Ultimate_AdBlocker.zip/file" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Install
-          </a>
-        </div>
-
-        <!-- Auto Cookie Cleaner -->
-        <div class="download-card animate__animated animate__fadeInUp">
-          <div class="card-icon">
-            <i class="fas fa-cookie-bite"></i>
-          </div>
-          <h3>Auto Cookie Cleaner</h3>
-          <p>Automatically clears cookies and browsing data when you close tabs or the browser.</p>
-          <a href="https://download1588.mediafire.com/d85ztdtkk0gg2DtxZ831Hq_XZmYWRq74fzfftti8zW3xm231B1fdDPN7whx6U3VPhpAsdjlfL0N3UbBkokLDy0tV47qsoBKPwYhlfxxD_D8ra2lMfx5AUZpNpmLJy1ldDw2bDK8zmEgNrnSdNrFHW3CIk5orf_lehL55OJIMJdwB_A/f1zc2wb66ktr3r7/Auto_Cookie_Cleaner.7z" class="download-btn" target="_blank">
-            <i class="fas fa-download"></i> Install
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-      <div class="container">
-        <h2 class="section-title animate__animated animate__fadeIn">User Feedback</h2>
-        <div class="testimonial-card animate__animated animate__fadeIn">
-          <p class="testimonial-content">These utilities have been surprisingly useful for my daily workflow. The File Organizer saved me hours of work, and the performance tweaks actually made a noticeable difference on my older machine.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">?</div>
-            <div class="author-info">
-              <h4>Anonymous User</h4>
-              <p>R42 Project User</p>
+      
+      <!-- Features -->
+      <section class="features">
+        <div class="container">
+          <h2 class="section-title">Why Choose R42 Tools</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3 class="feature-title">Performance Boost</h3>
+              <p class="feature-description">Optimized tools to maximize your system's speed and responsiveness.</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="feature-title">Safe & Secure</h3>
+              <p class="feature-description">Clean, safe software with no malware, ads, or unwanted bundles.</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-gift"></i>
+              </div>
+              <h3 class="feature-title">Free Forever</h3>
+              <p class="feature-description">Completely free tools with no hidden costs or subscriptions.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Free Tools</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">No Ads</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">0</div>
+              <div class="stat-label">Tracking</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apps Section -->
+      <section id="downloads" class="section">
+        <h2 class="section-title">Featured Applications</h2>
+        <div class="app-grid">
+          <!-- FakeFPS -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <h3 class="app-title">FakeFPS</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Realistic frame rate overlay to monitor your gaming performance with customizable display options.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/n81yvy19khy969h/setup.exe/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- R42 Tweaks -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-sliders-h"></i>
+              </div>
+              <h3 class="app-title">R42 Tweaks</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Comprehensive collection of optimization scripts and registry tweaks to boost system performance.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/ojhzrgel92rpwwl/Replays42+Tweaks.rar/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Network Speed Booster -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-wifi"></i>
+              </div>
+              <h3 class="app-title">Network Booster</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Optimize your network settings for maximum speed and reduced latency in online activities.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/fcv7yxkxghb3x8h/Network+Speed+Booster.r42/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Suyu FPS Mod -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-gamepad"></i>
+              </div>
+              <h3 class="app-title">Suyu FPS Mod</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Unlock up to 60 frames for Suyu Switch emulator to enhance your gaming experience.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="#" class="download-btn">
+                <i class="fas fa-clock"></i> Coming Soon
+              </a>
+            </div>
+          </div>
+
+          <!-- Retro N64 Launcher -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-chess-board"></i>
+              </div>
+              <h3 class="app-title">Retro N64</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Sleek launcher for organizing and launching your N64 games using Project64 emulator.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/5ne11ctbx5b6jln/r42+exe.msi/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Custom File Extractor -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-file-archive"></i>
+              </div>
+              <h3 class="app-title">File Extractor</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Specialized tool for extracting .r42 archive files with simple drag-and-drop interface.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/mv6ibb06qe1rcqx/public+for+extracting+r42_archives.exe/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Rise Of The TR Cheat -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-crosshairs"></i>
+              </div>
+              <h3 class="app-title">ROTTR Cheat</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">DLL file for injection into Rise of the Tomb Raider process (experimental).</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/1z41nvof31teak0/ROTTR_Hack.dll/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- DLL Injector -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3 class="app-title">DLL Injector</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Select and inject DLL files into running processes with this straightforward tool.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/tztokccvryzyi7t/Injector_Exe.exe/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- File Organizer -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-folder-open"></i>
+              </div>
+              <h3 class="app-title">File Organizer</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Automatically organizes files into folders based on their extensions with customizable rules.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/i6o7rk4aojk1zba/File_Organizer.exe/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Image Resizer -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-image"></i>
+              </div>
+              <h3 class="app-title">Image Resizer</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Quickly rescale images to desired dimensions while maintaining aspect ratio options.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/7bnblwx9vhh197y/image_resizer.exe/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- TXT File Word Counter -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <h3 class="app-title">TXT Word Counter</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Analyzes text files and provides detailed word count statistics with export options.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/a2dkgklu74k5y39/txt_word_counter_app.exe/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Basic Calculator -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h3 class="app-title">Basic Calculator</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">A clean, modern calculator with arithmetic functions and a history of calculations.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/q63zz2tbn2fhbwp/Basic_Calculator.exe/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Browser Extensions Section -->
+      <section class="section">
+        <h2 class="section-title">Browser Extensions</h2>
+        <div class="app-grid">
+          <!-- Ultimate Ad-Blocker -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="app-title">Ultimate Ad-Blocker</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Blocks ads, trackers, and malicious scripts for faster, cleaner, and safer browsing.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://www.mediafire.com/file/7wp2jsvrt52m5ae/Ultimate_AdBlocker.zip/file" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Install
+              </a>
+            </div>
+          </div>
+
+          <!-- Auto Cookie Cleaner -->
+          <div class="app-card">
+            <div class="app-card-header">
+              <div class="app-icon">
+                <i class="fas fa-cookie-bite"></i>
+              </div>
+              <h3 class="app-title">Auto Cookie Cleaner</h3>
+            </div>
+            <div class="app-card-body">
+              <p class="app-description">Automatically clears cookies and browsing data when you close tabs or the browser.</p>
+            </div>
+            <div class="app-card-footer">
+              <a href="https://download1588.mediafire.com/d85ztdtkk0gg2DtxZ831Hq_XZmYWRq74fzfftti8zW3xm231B1fdDPN7whx6U3VPhpAsdjlfL0N3UbBkokLDy0tV47qsoBKPwYhlfxxD_D8ra2lMfx5AUZpNpmLJy1ldDw2bDK8zmEgNrnSdNrFHW3CIk5orf_lehL55OJIMJdwB_A/f1zc2wb66ktr3r7/Auto_Cookie_Cleaner.7z" class="download-btn" target="_blank">
+                <i class="fas fa-download"></i> Install
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
-          <h3>R42 Project</h3>
-          <p>Free, high-quality software tools for Windows and browsers created by Replays42.</p>
+          <div class="footer-logo">R42 Project</div
+
+          <p class="footer-about">Premium free software tools for Windows created by Replays42. All tools are completely free with no hidden costs.</p>
           <div class="social-links">
-            <a href="https://youtube.com/@replays42" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://youtube.com/@replays42" target="_blank" class="social-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
           </div>
         </div>
         
         <div class="footer-column">
           <h3>Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="#downloads">Downloads</a></li>
+            <li><a href="#downloads">All Downloads</a></li>
             <li><a href="#" id="terms-link">Terms of Service</a></li>
+            <li><a href="https://youtube.com/@replays42" target="_blank">YouTube Channel</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contribute</a></li>
           </ul>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 R42 Project. All rights reserved. | Created by <a href="https://youtube.com/@replays42" target="_blank">@replays42</a></p>
+        <p>&copy; 2025 R42 Project. Created by <a href="https://youtube.com/@replays42" target="_blank">@replays42</a></p>
       </div>
     </div>
   </footer>
@@ -813,18 +1080,17 @@
   <div id="terms-modal" class="modal">
     <div class="modal-content">
       <span class="close-modal">&times;</span>
-      <h2>Terms of Service</h2>
-      <p>Before installing or using any software from this site, you agree to the following:</p>
-      <ul>
-        <li>This website and all software provided is not owned or operated by a formal company</li>
-        <li>You are solely responsible for any damages, data loss, or system issues that may occur from using these tools</li>
-        <li>The results and purposes of each application are not guaranteed</li>
-        <li>Some tools may affect system stability - use at your own risk</li>
-        <li>We respect your privacy - no user data is collected by these applications</li>
-        <li>All software is provided "as is" without warranties of any kind</li>
-        <li>You are responsible for backing up your system before making changes</li>
+      <h2 class="modal-title">Terms of Service</h2>
+      <p class="modal-text">Before installing or using any software from this site, please read and agree to the following terms:</p>
+      <ul class="modal-list">
+        <li>This is an independent project, not affiliated with any company</li>
+        <li>You are solely responsible for any damages, data loss, or system issues</li>
+        <li>Software performance and results are not guaranteed</li>
+        <li>No user data is collected by these applications</li>
+        <li>All software is provided "as is" without any warranties</li>
+        <li>Use at your own risk</li>
       </ul>
-      <p>By downloading or using any software from this site, you acknowledge and accept these terms.</p>
+      <p class="modal-text">By downloading or using any software, you acknowledge and accept these terms.</p>
     </div>
   </div>
 
@@ -837,17 +1103,51 @@
     termsLink.addEventListener("click", function(e) {
       e.preventDefault();
       modal.style.display = "block";
+      document.body.style.overflow = "hidden";
     });
 
     closeBtn.addEventListener("click", function() {
       modal.style.display = "none";
+      document.body.style.overflow = "auto";
     });
 
     window.addEventListener("click", function(e) {
       if (e.target == modal) {
         modal.style.display = "none";
+        document.body.style.overflow = "auto";
       }
     });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.animate__animated');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        
+        if(elementPosition < screenPosition) {
+          const animationClass = element.getAttribute('data-animation');
+          element.classList.add(animationClass);
+        }
+      });
+    }
+
+    // Run once on page load
+    animateOnScroll();
+    
+    // Run on scroll
+    window.addEventListener('scroll', animateOnScroll);
   </script>
 
 </body>
