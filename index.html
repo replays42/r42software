@@ -323,6 +323,7 @@
     .testimonial-author {
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     .author-avatar {
@@ -366,37 +367,6 @@
       max-width: 600px;
       margin: 0 auto 30px;
       opacity: 0.9;
-    }
-
-    .newsletter-form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      gap: 10px;
-    }
-
-    .newsletter-input {
-      flex-grow: 1;
-      padding: 12px 20px;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-    }
-
-    .newsletter-btn {
-      background: white;
-      color: var(--primary-dark);
-      border: none;
-      padding: 12px 25px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .newsletter-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
     }
 
     /* Footer */
@@ -479,6 +449,42 @@
       font-size: 0.9rem;
     }
 
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      z-index: 1000;
+      overflow: auto;
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: var(--radius);
+      max-width: 600px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+
+    .close-modal:hover {
+      color: var(--text-dark);
+    }
+
     /* Animations */
     .animate-delay-1 {
       animation-delay: 0.2s;
@@ -500,10 +506,6 @@
       
       .section-title {
         font-size: 2rem;
-      }
-      
-      .newsletter-form {
-        flex-direction: column;
       }
     }
 
@@ -763,32 +765,20 @@
     <!-- Testimonials -->
     <section class="testimonials">
       <div class="container">
-        <h2 class="section-title animate__animated animate__fadeIn">What Users Say</h2>
+        <h2 class="section-title animate__animated animate__fadeIn">User Feedback</h2>
         <div class="testimonial-card animate__animated animate__fadeIn">
-          <p class="testimonial-content">R42 Project tools have completely transformed my workflow. The File Organizer saved me hours of manual work, and the Network Speed Booster actually doubled my download speeds. Best of all - everything is completely free!</p>
+          <p class="testimonial-content">These utilities have been surprisingly useful for my daily workflow. The File Organizer saved me hours of work, and the performance tweaks actually made a noticeable difference on my older machine.</p>
           <div class="testimonial-author">
-            <div class="author-avatar">JD</div>
+            <div class="author-avatar">?</div>
             <div class="author-info">
-              <h4>John D.</h4>
-              <p>Power User</p>
+              <h4>Anonymous User</h4>
+              <p>R42 Project User</p>
             </div>
           </div>
         </div>
       </div>
     </section>
   </div>
-
-  <!-- Newsletter -->
-  <section class="newsletter animate__animated animate__fadeIn">
-    <div class="container">
-      <h2>Stay Updated</h2>
-      <p>Subscribe to get notified about new releases and updates from R42 Project</p>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Your email address" class="newsletter-input" required>
-        <button type="submit" class="newsletter-btn">Subscribe</button>
-      </form>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer>
@@ -808,27 +798,7 @@
           <h3>Quick Links</h3>
           <ul class="footer-links">
             <li><a href="#downloads">Downloads</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Support</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Legal</h3>
-          <ul class="footer-links">
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">License</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h3>Contact</h3>
-          <ul class="footer-links">
-            <li><a href="mailto:contact@r42project.com">contact@r42project.com</a></li>
-            <li><a href="#">Report an Issue</a></li>
-            <li><a href="#">Feature Request</a></li>
+            <li><a href="#" id="terms-link">Terms of Service</a></li>
           </ul>
         </div>
       </div>
@@ -838,6 +808,47 @@
       </div>
     </div>
   </footer>
+
+  <!-- Terms of Service Modal -->
+  <div id="terms-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Terms of Service</h2>
+      <p>Before installing or using any software from this site, you agree to the following:</p>
+      <ul>
+        <li>This website and all software provided is not owned or operated by a formal company</li>
+        <li>You are solely responsible for any damages, data loss, or system issues that may occur from using these tools</li>
+        <li>The results and purposes of each application are not guaranteed</li>
+        <li>Some tools may affect system stability - use at your own risk</li>
+        <li>We respect your privacy - no user data is collected by these applications</li>
+        <li>All software is provided "as is" without warranties of any kind</li>
+        <li>You are responsible for backing up your system before making changes</li>
+      </ul>
+      <p>By downloading or using any software from this site, you acknowledge and accept these terms.</p>
+    </div>
+  </div>
+
+  <script>
+    // Modal functionality
+    const modal = document.getElementById("terms-modal");
+    const termsLink = document.getElementById("terms-link");
+    const closeBtn = document.querySelector(".close-modal");
+
+    termsLink.addEventListener("click", function(e) {
+      e.preventDefault();
+      modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(e) {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
 </html>
